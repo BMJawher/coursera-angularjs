@@ -1,0 +1,57 @@
+<div class="container">
+
+<h1 style="text-align:center">Sign up and recieve our newsletter !</h1>
+<fieldset>
+  <legend style="color:white">Registration</legend>
+  <form name="regForm"  novalidate>
+
+    <input type="text" name="firstName" placeholder="First name"
+          ng-model="signupCtrl.pref.firstName" required>
+          <span ng-if="regForm.firstName.$error.required && regForm.firstName.$touched">
+            Your first name is a required field
+          </span>
+          <br>
+
+    <input type="text" name="lastName" placeholder="Last name"
+          ng-model="signupCtrl.pref.lastName" required>
+          <span ng-if="regForm.lastName.$error.required && regForm.lastName.$touched">
+            Your last name is a required field
+          </span>
+          <br>
+
+    <input style="width:300px" type="email" name="email" placeholder="Email"
+          ng-model="signupCtrl.pref.email" required>
+          <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+          <br>
+
+    <input type="text" name="phone" placeholder="Phone ###-###-####"
+          ng-model="signupCtrl.pref.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
+          <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+          <br>
+
+    <input type="text" name="address" placeholder="Address"
+          ng-model="signupCtrl.pref.address" required>
+          <span ng-if="regForm.address.$error.required && regForm.address.$touched">
+            Your address is a required field
+          </span>
+          <br>
+
+    <input type="text" name="menu" placeholder="Menu item"
+          ng-model="signupCtrl.pref.menuNumber" required>
+          <span ng-if="regForm.menu.$error.required && regForm.menu.$touched">
+            The menu number is a required field
+          </span>
+          <br>
+
+    <button id="submit" ng-disabled="regForm.$invalid" ng-click="signupCtrl.submit()">Submit</button>
+    <span ng-if="signupCtrl.invalid">No such menu number exists</span>
+    <span ng-if="signupCtrl.valid">Your information has been saved</span>
+
+  </form>
+</fieldset>
+
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+
+  <div ng-if="myinfoCtrl.pref === undefined">
+     Not Signed Up Yet. Sign up Now!
+   </div>
+
+  <div ng-if="myinfoCtrl.pref != undefined">
+    <h1 style="text-align:center">You registred informations</h1>
+    <label>First Name: </label><br><input value="{{myinfoCtrl.pref.firstName}}" readonly><br>
+    <label>Last Name: </label><br><input value="{{myinfoCtrl.pref.lastName}}" readonly><br>
+    <label>Email: </label><br><input style="width:300px" value="{{myinfoCtrl.pref.email}}" readonly><br>
+    <label>Phone: </label><br><input value="{{myinfoCtrl.pref.phone}}" readonly><br>
+    <label>Address: </label><br><input value="{{myinfoCtrl.pref.address}}" readonly><br>
+
+    <label>Favourite dish: {{myinfoCtrl.favDish.name}} ({{myinfoCtrl.pref.menuNumber}})</label><br>
+    <img class="img-responsive" width="250" height="150" ng-src="{{myinfoCtrl.basePath}}/images/{{myinfoCtrl.favDish.short_name}}.jpg" alt="{{myinfoCtrl.favDish.name}}">
+
+  </div>
+</div>
