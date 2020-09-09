@@ -1,7 +1,7 @@
 <div class="container">
 
   <div ng-if="myinfoCtrl.pref === undefined">
-     Not Signed Up Yet. Sign up Now!
+     Not Signed Up Yet. <a style="cursor:pointer"><span ui-sref="public.signup">Sign up Now!</span></a>
    </div>
 
   <div ng-if="myinfoCtrl.pref != undefined">
